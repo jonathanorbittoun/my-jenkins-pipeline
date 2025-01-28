@@ -27,7 +27,7 @@ pipeline {
                     withCredentials([
                         [
                             $class: 'AmazonWebServicesCredentialsBinding',
-                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Corrected ID from Jenkins
+                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Use the actual credentials ID
                         ]
                     ]) {
                         sh '''
@@ -45,7 +45,7 @@ pipeline {
                     withCredentials([
                         [
                             $class: 'AmazonWebServicesCredentialsBinding',
-                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Corrected ID from Jenkins
+                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Use the actual credentials ID
                         ]
                     ]) {
                         sh '''
