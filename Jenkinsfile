@@ -24,10 +24,12 @@ pipeline {
             steps {
                 dir('terraform') {
                     echo 'Initializing Terraform...'
-                    withCredentials([[
-                        $class: 'AmazonWebServicesCredentialsBinding',
-                        credentialsId: 'aws-credentials-id' // Replace with the ID of your Jenkins credentials
-                    ]]) {
+                    withCredentials([
+                        [
+                            $class: 'AmazonWebServicesCredentialsBinding',
+                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Corrected ID from Jenkins
+                        ]
+                    ]) {
                         sh '''
                             terraform init
                         '''
@@ -40,10 +42,12 @@ pipeline {
             steps {
                 dir('terraform') {
                     echo 'Applying Terraform configuration...'
-                    withCredentials([[
-                        $class: 'AmazonWebServicesCredentialsBinding',
-                        credentialsId: 'aws-credentials-id' // Replace with the ID of your Jenkins credentials
-                    ]]) {
+                    withCredentials([
+                        [
+                            $class: 'AmazonWebServicesCredentialsBinding',
+                            credentialsId: 'ba8c2f05-a57b-44d4-9ea5-3a237faf8767' // Corrected ID from Jenkins
+                        ]
+                    ]) {
                         sh '''
                             terraform apply -auto-approve
                         '''
